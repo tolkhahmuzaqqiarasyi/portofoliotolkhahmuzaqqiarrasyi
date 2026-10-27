@@ -1,0 +1,75 @@
+/* @import url() FONT IMPORTS MUST ALWAYS BE AT THE VERY TOP OF THIS FILE, ABOVE THE TAILWIND IMPORTS — DO NOT DELETE THIS COMMENT */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap');
+
+/* CRITICAL: THE FOLLOWING TAILWIND IMPORTS MUST NEVER BE DELETED OR REORDERED — DO NOT DELETE THIS COMMENT */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
+
+:root {
+  --bg: 255 251 245;
+  --surface: 255 255 255;
+  --surface-2: 246 241 232;
+  --ink: 22 22 56;
+  --muted: 84 84 116;
+  --line: 232 225 213;
+  --band: 18 18 58;
+  --primary: 59 91 255;
+  --primary-ink: 43 68 224;
+  --violet: 139 92 246;
+  --violet-deep: 109 40 217;
+  --lavender: 201 184 255;
+  --pink: 255 92 168;
+  --lemon: 255 225 77;
+  --success: 21 128 61;
+  --danger: 190 18 60;
+  color-scheme: light;
+}
+.dark {
+  --bg: 24 24 70;
+  --surface: 33 33 88;
+  --surface-2: 40 40 104;
+  --ink: 246 245 255;
+  --muted: 198 198 232;
+  --line: 62 62 124;
+  --band: 12 12 40;
+  --primary-ink: 156 174 255;
+  --success: 74 222 128;
+  --danger: 253 164 175;
+  color-scheme: dark;
+}
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+body {
+  background-color: rgb(var(--bg));
+  color: rgb(var(--ink));
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 200ms ease-out, color 200ms ease-out;
+}
+section[id] {
+  scroll-margin-top: 80px;
+}
+:focus-visible {
+  outline: 3px solid rgb(var(--primary));
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+.pulse-ring {
+  animation: pulse-ring 1.6s cubic-bezier(0.23, 1, 0.32, 1) infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .pulse-ring { animation: none; }
+}
